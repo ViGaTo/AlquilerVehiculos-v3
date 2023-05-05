@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="773.0" stylesheets="@../estilos/estilos.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.alquilervehiculos.vista.grafica.controladoresvista.ControladorEscenarioPrincipal">
+   <children>
+      <MenuBar fx:id="menu">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem fx:id="miSalir" mnemonicParsing="false" onAction="#salir" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem fx:id="miAcerca" mnemonicParsing="false" onAction="#acercaDe" text="Acerca de..." />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane prefHeight="533.0" prefWidth="779.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Clientes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="748.0">
+                     <children>
+                        <VBox prefHeight="510.0" prefWidth="773.0">
+                           <children>
+                              <Label fx:id="labelCliente" alignment="CENTER" prefHeight="60.0" prefWidth="748.0" text="Clientes">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablaClientes" prefHeight="217.0" prefWidth="748.0">
+                                 <columns>
+                                    <TableColumn fx:id="tcNombreCliente" prefWidth="271.0" text="Nombre" />
+                                    <TableColumn fx:id="tcDniCliente" prefWidth="287.0" text="DNI" />
+                                    <TableColumn fx:id="tcTelefonoCliente" prefWidth="214.0" text="Teléfono" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem fx:id="miInsertarCliente" mnemonicParsing="false" onAction="#insertarCliente" text="Insertar cliente" />
+                                          <MenuItem fx:id="miModificarCliente" mnemonicParsing="false" onAction="#modificarCliente" text="Modificar cliente" />
+                                          <MenuItem fx:id="miBorrarCliente" mnemonicParsing="false" onAction="#borrarCliente" text="Borrar cliente" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                              <Label fx:id="labelAlquileresCliente" alignment="CENTER" prefHeight="60.0" prefWidth="748.0" text="Alquileres del cliente">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablaAlquileresCliente" prefHeight="203.0" prefWidth="748.0">
+                                 <columns>
+                                    <TableColumn fx:id="tcModeloCliente" prefWidth="206.0" text="Modelo del vehículo" />
+                                    <TableColumn fx:id="tcMatriculaCliente" minWidth="0.0" prefWidth="179.0" text="Matrícula del vehículo" />
+                                    <TableColumn fx:id="tcFechaAlquilerCliente" minWidth="3.0" prefWidth="127.0" text="Fecha de alquiler" />
+                                    <TableColumn fx:id="tcFechaDevolucionCliente" prefWidth="159.0" text="Fecha de devolución" />
+                                    <TableColumn fx:id="tcPrecioCliente" prefWidth="101.0" text="Precio" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem fx:id="miInsertarAlquilerCliente" mnemonicParsing="false" onAction="#insertarAlquiler" text="Insertar alquiler" />
+                                          <MenuItem fx:id="miDevolverAlquilerCliente" mnemonicParsing="false" onAction="#devolverAlquiler" text="Devolver alquiler" />
+                                          <MenuItem fx:id="miBorrarAlquilerCliente" mnemonicParsing="false" onAction="#borrarAlquilerCliente" text="Borrar alquiler" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/cliente.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+          <Tab text="Vehículos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="510.0" prefWidth="783.0">
+                           <children>
+                              <Label fx:id="labelVehiculos" alignment="CENTER" prefHeight="60.0" prefWidth="748.0" text="Vehículos">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablaVehiculos" prefHeight="217.0" prefWidth="748.0">
+                                 <columns>
+                                    <TableColumn fx:id="tcMarcaVehiculo" prefWidth="132.0" text="Marca" />
+                                    <TableColumn fx:id="tcModeloVehiculo" prefWidth="143.0" text="Modelo" />
+                                    <TableColumn fx:id="tcTipoVehiculo" prefWidth="119.0" text="Tipo" />
+                                    <TableColumn fx:id="tcMatriculaVehiculo" prefWidth="144.0" text="Matrícula" />
+                                    <TableColumn fx:id="tcCilindradaVehiculo" prefWidth="98.0" text="Cilindrada" />
+                                    <TableColumn fx:id="tcPlazasVehiculo" prefWidth="62.0" text="Plazas" />
+                                    <TableColumn fx:id="tcPmaVehiculo" prefWidth="76.0" text="PMA" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem fx:id="miInsertarVehiculo" mnemonicParsing="false" onAction="#insertarVehiculo" text="Insertar vehículo" />
+                                          <MenuItem fx:id="miBorrarVehiculo" mnemonicParsing="false" onAction="#borrarVehiculo" text="Borrar vehículo" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                              <Label fx:id="labelAlquileresVehiculo" alignment="CENTER" prefHeight="60.0" prefWidth="748.0" text="Alquileres del vehículo">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablaAlquileresVehiculo" prefHeight="203.0" prefWidth="748.0">
+                                 <columns>
+                                    <TableColumn fx:id="tcNombreVehiculo" prefWidth="206.0" text="Nombre del cliente" />
+                                    <TableColumn fx:id="tcDniVehiculo" minWidth="0.0" prefWidth="179.0" text="DNI del cliente" />
+                                    <TableColumn fx:id="tcFechaAlquilerVehiculo" minWidth="3.0" prefWidth="127.0" text="Fecha de alquiler" />
+                                    <TableColumn fx:id="tcFechaDevolucionVehiculo" prefWidth="160.0" text="Fecha de devolución" />
+                                    <TableColumn fx:id="tcPrecioVehiculo" prefWidth="105.0" text="Precio" />
+                                 </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem fx:id="miInsertarAlquilerVehiculo" mnemonicParsing="false" onAction="#insertarAlquiler" text="Insertar alquiler" />
+                                          <MenuItem fx:id="miDevolverAlquilerVehiculo" mnemonicParsing="false" onAction="#devolverAlquiler" text="Devolver alquiler" />
+                                          <MenuItem fx:id="miBorrarAlquilerVehiculo" mnemonicParsing="false" onAction="#borrarAlquilerVehiculo" text="Borrar alquiler" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/vehiculo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+            <Tab text="Alquileres">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="510.0" prefWidth="773.0">
+                           <children>
+                              <Label fx:id="labelAlquileres" alignment="CENTER" prefHeight="60.0" prefWidth="748.0" text="Alquileres">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tablaAlquileres" prefHeight="450.0" prefWidth="785.0">
+                                <columns>
+                                  <TableColumn fx:id="tcNombreAlquiler" prefWidth="108.0" text="Nombre Cliente" />
+                                  <TableColumn fx:id="tcDniAlquiler" prefWidth="106.0" text="DNI Cliente" />
+                                    <TableColumn fx:id="tcModeloAlquiler" minWidth="0.0" prefWidth="122.0" text="Modelo Vehículo" />
+                                    <TableColumn fx:id="tcMatriculaAlquiler" prefWidth="134.0" text="Matrícula Vehículo" />
+                                    <TableColumn fx:id="tcFechaAlquilerAlquiler" prefWidth="104.0" text="Fecha Alquiler" />
+                                    <TableColumn fx:id="tcFechaDevolucionAlquiler" prefWidth="126.0" text="Fecha Devolución" />
+                                    <TableColumn fx:id="tcPrecioAlquiler" prefWidth="72.0" text="Precio" />
+                                </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem fx:id="miInsertarAlquiler" mnemonicParsing="false" onAction="#insertarAlquiler" text="Insertar alquiler" />
+                                          <MenuItem fx:id="miDevolverAlquiler" mnemonicParsing="false" onAction="#devolverAlquiler" text="Devolver alquiler" />
+                                          <MenuItem fx:id="miBorrarAlquiler" mnemonicParsing="false" onAction="#borrarAlquiler" text="Borrar alquiler" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/alquiler.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

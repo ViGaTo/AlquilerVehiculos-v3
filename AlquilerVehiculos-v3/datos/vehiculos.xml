@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Vehiculos>
+    <Vehiculo Matricula="8888PPP" Tipo="Turismo">
+        <Marca>Renault</Marca>
+        <Modelo>Megane</Modelo>
+        <Turismo>
+            <Cilindrada>1600</Cilindrada>
+        </Turismo>
+    </Vehiculo>
+    <Vehiculo Matricula="9999GGG" Tipo="Autobus">
+        <Marca>Opel</Marca>
+        <Modelo>Corsa</Modelo>
+        <Autobus>
+            <Plazas>24</Plazas>
+        </Autobus>
+    </Vehiculo>
+</Vehiculos>
